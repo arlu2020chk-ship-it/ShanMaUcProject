@@ -22,3 +22,5 @@ npm start
 Mount a persistent volume at /data and set DATA_DIR=/data.
 
 The bot stays online 24/7. New UC orders are accepted from 9:00 AM to 11:00 PM Myanmar time.
+
+Railway deployment trigger.
