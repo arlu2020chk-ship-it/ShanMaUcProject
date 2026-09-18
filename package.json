@@ -1,0 +1,15 @@
+{
+  "name": "shanmaacxno1-uc-bot",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "node-telegram-bot-api": "^2.0.0"
+  }
+}
