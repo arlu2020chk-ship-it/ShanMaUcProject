@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0b0d" />
+  <title>ShanMa UC</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="https://telegram.org/js/telegram-web-app.js?63"></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">SHANMAACXNO1</p>
+        <h1>UC Shop</h1>
+      </div>
+      <div class="user-chip" id="userChip">Telegram</div>
+    </header>
+
+    <section class="hero-card">
+      <p class="muted">PUBG Mobile UC</p>
+      <h2>Fast, simple ordering inside Telegram.</h2>
+      <p class="hero-copy">Choose a package, enter your PUBG ID and review the order before submitting.</p>
+      <button class="primary-btn" id="startOrderBtn" type="button">Buy UC</button>
+    </section>
+
+    <section class="page active" id="shopPage" data-page="shop">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">PACKAGES</p>
+          <h3>Choose UC</h3>
+        </div>
+        <span class="small-note">Prices coming next</span>
+      </div>
+
+      <div class="package-grid" id="packageGrid"></div>
+
+      <form class="order-card" id="orderForm">
+        <div class="field-group">
+          <label for="selectedPackage">Selected package</label>
+          <input id="selectedPackage" type="text" readonly placeholder="Choose a package above" />
+        </div>
+
+        <div class="field-group">
+          <label for="pubgId">PUBG ID</label>
+          <input id="pubgId" type="text" inputmode="numeric" autocomplete="off" placeholder="Enter PUBG ID" maxlength="20" />
+        </div>
+
+        <div class="field-group">
+          <label for="payerName">Payer name</label>
+          <input id="payerName" type="text" autocomplete="name" placeholder="Name used for KBZPay" maxlength="80" />
+        </div>
+
+        <button class="primary-btn full" type="submit">Review Order</button>
+        <p class="form-message" id="formMessage" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="page" id="ordersPage" data-page="orders">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">MY ORDERS</p>
+          <h3>Order history</h3>
+        </div>
+      </div>
+      <div class="empty-state">
+        <p>No Mini App orders yet.</p>
+        <span>Your Telegram bot orders will appear here after the backend connection is added.</span>
+      </div>
+    </section>
+
+    <section class="page" id="supportPage" data-page="support">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">SUPPORT</p>
+          <h3>Need help?</h3>
+        </div>
+      </div>
+      <div class="support-card">
+        <p>Support will stay private through your Telegram bot.</p>
+        <button class="secondary-btn" id="supportBtn" type="button">Open Bot Support</button>
+      </div>
+    </section>
+
+    <section class="review-sheet" id="reviewSheet" aria-hidden="true">
+      <div class="review-panel">
+        <div class="review-head">
+          <div>
+            <p class="eyebrow">REVIEW</p>
+            <h3>Check your order</h3>
+          </div>
+          <button class="icon-btn" id="closeReviewBtn" type="button" aria-label="Close review">×</button>
+        </div>
+
+        <div class="review-list">
+          <div><span>Package</span><strong id="reviewPackage">-</strong></div>
+          <div><span>PUBG ID</span><strong id="reviewPubgId">-</strong></div>
+          <div><span>Payer name</span><strong id="reviewPayerName">-</strong></div>
+          <div><span>Price</span><strong>Will be added next</strong></div>
+        </div>
+
+        <button class="primary-btn full" id="confirmPreviewBtn" type="button">Looks Good</button>
+        <button class="text-btn" id="editPreviewBtn" type="button">Edit Order</button>
+      </div>
+    </section>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <button class="nav-btn active" type="button" data-target="shop">
+        <span>Shop</span>
+      </button>
+      <button class="nav-btn" type="button" data-target="orders">
+        <span>Orders</span>
+      </button>
+      <button class="nav-btn" type="button" data-target="support">
+        <span>Support</span>
+      </button>
+    </nav>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
